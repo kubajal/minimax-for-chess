@@ -1,0 +1,1295 @@
+<!DOCTYPE html >
+<html>
+        <head>
+          <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+          <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+          <title>minimax-for-chess documentation  - chess.controller.InternalState</title>
+          <meta name="description" content="minimax - for - chess documentation - chess.controller.InternalState" />
+          <meta name="keywords" content="minimax for chess documentation chess.controller.InternalState" />
+          <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+          
+      <link href="../../lib/index.css" media="screen" type="text/css" rel="stylesheet" />
+      <link href="../../lib/template.css" media="screen" type="text/css" rel="stylesheet" />
+      <link href="../../lib/diagrams.css" media="screen" type="text/css" rel="stylesheet" id="diagrams-css" />
+      <script type="text/javascript" src="../../lib/jquery.js"></script>
+      <script type="text/javascript" src="../../lib/jquery.panzoom.min.js"></script>
+      <script type="text/javascript" src="../../lib/jquery.mousewheel.min.js"></script>
+      <script type="text/javascript" src="../../lib/index.js"></script>
+      <script type="text/javascript" src="../../index.js"></script>
+      <script type="text/javascript" src="../../lib/scheduler.js"></script>
+      <script type="text/javascript" src="../../lib/template.js"></script>
+      <script type="text/javascript" src="../../lib/tools.tooltip.js"></script>
+      
+      <script type="text/javascript">
+        /* this variable can be used by the JS to determine the path to the root document */
+        var toRoot = '../../';
+      </script>
+    
+        </head>
+        <body>
+      <div id="search">
+        <span id="doc-title">minimax-for-chess documentation<span id="doc-version"></span></span>
+        <span class="close-results"><span class="left">&lt;</span> Back</span>
+        <div id="textfilter">
+          <span class="input">
+            <input autocapitalize="none" placeholder="Search" id="index-input" type="text" accesskey="/" />
+            <i class="clear material-icons"></i>
+            <i id="search-icon" class="material-icons"></i>
+          </span>
+        </div>
+    </div>
+      <div id="search-results">
+        <div id="search-progress">
+          <div id="progress-fill"></div>
+        </div>
+        <div id="results-content">
+          <div id="entity-results"></div>
+          <div id="member-results"></div>
+        </div>
+      </div>
+      <div id="content-scroll-container" style="-webkit-overflow-scrolling: touch;">
+        <div id="content-container" style="-webkit-overflow-scrolling: touch;">
+          <div id="subpackage-spacer">
+            <div id="packages">
+              <h1>Packages</h1>
+              <ul>
+                <li name="_root_.root" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="_root_"></a><a id="root:_root_"></a>
+      <span class="permalink">
+      <a href="index.html#_root_" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">package</span>
+      </span>
+      <span class="symbol">
+        <a title="" href="../../index.html"><span class="name">root</span></a>
+      </span>
+      
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../../index.html" class="extype" name="_root_">root</a></dd></dl></div>
+    </li><li name="_root_.chess" visbl="pub" class="indented1 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="chess"></a><a id="chess:chess"></a>
+      <span class="permalink">
+      <a href="index.html#chess" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">package</span>
+      </span>
+      <span class="symbol">
+        <a title="The game of chess." href="../index.html"><span class="name">chess</span></a>
+      </span>
+      
+      <p class="shortcomment cmt"> The game of chess.</p><div class="fullcomment"><div class="comment cmt"><p> The game of chess.</p><p> See <a href="index.html" class="extype" name="chess.controller">chess.controller</a> and <a href="../model/index.html" class="extype" name="chess.model">chess.model</a> for more.</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../../index.html" class="extype" name="_root_">root</a></dd></dl></div>
+    </li><li name="chess.controller" visbl="pub" class="indented2 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="controller"></a><a id="controller:controller"></a>
+      <span class="permalink">
+      <a href="../chess/index.html#controller" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">package</span>
+      </span>
+      <span class="symbol">
+        <a title="Logic of the game." href="index.html"><span class="name">controller</span></a>
+      </span>
+      
+      <p class="shortcomment cmt"> Logic of the game.</p><div class="fullcomment"><div class="comment cmt"><p> Logic of the game. Bootstrap the whole application, manipulate the state of the board: make a move, update the model of the board,
+ handle checkmates and stalemates, run AI with the a given evaluation function.</p><ul><li><a href="Controller.html" class="extype" name="chess.controller.Controller">chess.controller.Controller</a> - core logic of the game,</li><li><a href="Algorithm.html" class="extype" name="chess.controller.Algorithm">chess.controller.Algorithm</a> - minimax algorithm with alpha-beta pruning,</li><li><a href="Evaluator.html" class="extype" name="chess.controller.Evaluator">chess.controller.Evaluator</a> - evaluation function, that calculates how good the position of a given player is. Used by <a href="Algorithm.html" class="extype" name="chess.controller.Algorithm">chess.controller.Algorithm</a>.</li><li><a href="" class="extype" name="chess.controller.InternalState">chess.controller.InternalState</a> - state of the board: white figures + black figures,</li><li><a href="Main$.html" class="extype" name="chess.controller.Main">chess.controller.Main</a> - bootstraps the application.
+</li></ul></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../index.html" class="extype" name="chess">chess</a></dd></dl></div>
+    </li><li class="current-entities indented2">
+                        <span class="separator"></span>
+                        <a class="class" href="Algorithm.html" title="Implementation of the minimax algorithm with alpha-beta pruning."></a>
+                        <a href="Algorithm.html" title="Implementation of the minimax algorithm with alpha-beta pruning.">Algorithm</a>
+                      </li><li class="current-entities indented2">
+                        <span class="separator"></span>
+                        <a class="class" href="Controller.html" title="Represents the core logic of the game."></a>
+                        <a href="Controller.html" title="Represents the core logic of the game.">Controller</a>
+                      </li><li class="current-entities indented2">
+                        <span class="separator"></span>
+                        <a class="class" href="Evaluator.html" title="Represents a function that is used by chess.controller.Algorithm to evaluate the state of the board from the maximizing players perspective."></a>
+                        <a href="Evaluator.html" title="Represents a function that is used by chess.controller.Algorithm to evaluate the state of the board from the maximizing players perspective.">Evaluator</a>
+                      </li><li class="current-entities indented2">
+                        <span class="separator"></span>
+                        <a class="class" href="" title="Represents the situation on the board including the set of white figures, the set of black figures and the general state of the board."></a>
+                        <a href="" title="Represents the situation on the board including the set of white figures, the set of black figures and the general state of the board.">InternalState</a>
+                      </li><li class="current-entities indented2">
+                        <span class="separator"></span>
+                        <a class="object" href="Main$.html" title="Entry point to the application."></a>
+                        <a href="Main$.html" title="Entry point to the application.">Main</a>
+                      </li>
+              </ul>
+            </div>
+          </div>
+          <div id="content">
+            <body class="class type">
+      <div id="definition">
+        <div class="big-circle class">c</div>
+        <p id="owner"><a href="../index.html" class="extype" name="chess">chess</a>.<a href="index.html" class="extype" name="chess.controller">controller</a></p>
+        <h1>InternalState<span class="permalink">
+      <a href="../../chess/controller/InternalState.html" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span></h1>
+        <h3><span class="morelinks"></span></h3>
+      </div>
+
+      <h4 id="signature" class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <span class="name">InternalState</span><span class="params">(<span name="whiteFigures">whiteFigures: <span class="extype" name="scala.Vector">Vector</span>[<a href="../model/Figure.html" class="extype" name="chess.model.Figure">Figure</a>]</span>, <span name="blackFigures">blackFigures: <span class="extype" name="scala.Vector">Vector</span>[<a href="../model/Figure.html" class="extype" name="chess.model.Figure">Figure</a>]</span>, <span name="board">board: <span class="extype" name="scala.Vector">Vector</span>[<span class="extype" name="scala.Vector">Vector</span>[<a href="../model/Figure.html" class="extype" name="chess.model.Figure">Figure</a>]]</span>, <span name="activePlayer">activePlayer: <a href="../model/PlayerColor$.html#PlayerColor=chess.model.PlayerColor.Value" class="extmbr" name="chess.model.PlayerColor.PlayerColor">PlayerColor</a></span>)</span><span class="result"> extends <a href="../model/Images.html" class="extype" name="chess.model.Images">Images</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4>
+
+      
+          <div id="comment" class="fullcommenttop"><div class="comment cmt"><p>Represents the situation on the board including the set of white figures, the set of black figures and the general
+state of the board.
+</p></div><dl class="paramcmts block"><dt class="param">whiteFigures</dt><dd class="cmt"><p>Set of white figures.</p></dd><dt class="param">blackFigures</dt><dd class="cmt"><p>Set of black figures.</p></dd><dt class="param">board</dt><dd class="cmt"><p>8x8 representation of the board that is implied by @blackFigures and @whiteFigures.</p></dd><dt class="param">activePlayer</dt><dd class="cmt"><p>The player that makes a move.</p></dd></dl><div class="toggleContainer block">
+          <span class="toggle">
+            Linear Supertypes
+          </span>
+          <div class="superTypes hiddenContent"><span class="extype" name="scala.Serializable">Serializable</span>, <span class="extype" name="java.io.Serializable">Serializable</span>, <span class="extype" name="scala.Product">Product</span>, <span class="extype" name="scala.Equals">Equals</span>, <a href="../model/Images.html" class="extype" name="chess.model.Images">Images</a>, <span class="extype" name="scala.AnyRef">AnyRef</span>, <span class="extype" name="scala.Any">Any</span></div>
+        </div></div>
+        
+
+      <div id="mbrsel">
+        <div class="toggle"></div>
+        <div id="memberfilter">
+          <i class="material-icons arrow"></i>
+          <span class="input">
+            <input id="mbrsel-input" placeholder="Filter all members" type="text" accesskey="/" />
+          </span>
+          <i class="clear material-icons"></i>
+        </div>
+        <div id="filterby">
+          <div id="order">
+            <span class="filtertype">Ordering</span>
+            <ol>
+              
+              <li class="alpha in"><span>Alphabetic</span></li>
+              <li class="inherit out"><span>By Inheritance</span></li>
+            </ol>
+          </div>
+          <div class="ancestors">
+                  <span class="filtertype">Inherited<br />
+                  </span>
+                  <ol id="linearization">
+                    <li class="in" name="chess.controller.InternalState"><span>InternalState</span></li><li class="in" name="scala.Serializable"><span>Serializable</span></li><li class="in" name="java.io.Serializable"><span>Serializable</span></li><li class="in" name="scala.Product"><span>Product</span></li><li class="in" name="scala.Equals"><span>Equals</span></li><li class="in" name="chess.model.Images"><span>Images</span></li><li class="in" name="scala.AnyRef"><span>AnyRef</span></li><li class="in" name="scala.Any"><span>Any</span></li>
+                  </ol>
+                </div><div class="ancestors">
+              <span class="filtertype"></span>
+              <ol>
+                <li class="hideall out"><span>Hide All</span></li>
+                <li class="showall in"><span>Show All</span></li>
+              </ol>
+            </div>
+          <div id="visbl">
+              <span class="filtertype">Visibility</span>
+              <ol><li class="public in"><span>Public</span></li><li class="all out"><span>All</span></li></ol>
+            </div>
+        </div>
+      </div>
+
+      <div id="template">
+        <div id="allMembers">
+        <div id="constructors" class="members">
+              <h3>Instance Constructors</h3>
+              <ol><li name="chess.controller.InternalState#&lt;init&gt;" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="&lt;init&gt;(whiteFigures:Vector[chess.model.Figure],blackFigures:Vector[chess.model.Figure],board:Vector[Vector[chess.model.Figure]],activePlayer:chess.model.PlayerColor.PlayerColor):chess.controller.InternalState"></a><a id="&lt;init&gt;:InternalState"></a>
+      <span class="permalink">
+      <a href="../../chess/controller/InternalState.html#&lt;init&gt;(whiteFigures:Vector[chess.model.Figure],blackFigures:Vector[chess.model.Figure],board:Vector[Vector[chess.model.Figure]],activePlayer:chess.model.PlayerColor.PlayerColor):chess.controller.InternalState" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">new</span>
+      </span>
+      <span class="symbol">
+        <span class="name">InternalState</span><span class="params">(<span name="whiteFigures">whiteFigures: <span class="extype" name="scala.Vector">Vector</span>[<a href="../model/Figure.html" class="extype" name="chess.model.Figure">Figure</a>]</span>, <span name="blackFigures">blackFigures: <span class="extype" name="scala.Vector">Vector</span>[<a href="../model/Figure.html" class="extype" name="chess.model.Figure">Figure</a>]</span>, <span name="board">board: <span class="extype" name="scala.Vector">Vector</span>[<span class="extype" name="scala.Vector">Vector</span>[<a href="../model/Figure.html" class="extype" name="chess.model.Figure">Figure</a>]]</span>, <span name="activePlayer">activePlayer: <a href="../model/PlayerColor$.html#PlayerColor=chess.model.PlayerColor.Value" class="extmbr" name="chess.model.PlayerColor.PlayerColor">PlayerColor</a></span>)</span>
+      </span>
+      
+      <p class="shortcomment cmt"></p><div class="fullcomment"><div class="comment cmt"></div><dl class="paramcmts block"><dt class="param">whiteFigures</dt><dd class="cmt"><p>Set of white figures.</p></dd><dt class="param">blackFigures</dt><dd class="cmt"><p>Set of black figures.</p></dd><dt class="param">board</dt><dd class="cmt"><p>8x8 representation of the board that is implied by @blackFigures and @whiteFigures.</p></dd><dt class="param">activePlayer</dt><dd class="cmt"><p>The player that makes a move.</p></dd></dl></div>
+    </li></ol>
+            </div>
+
+        
+
+        
+
+        <div class="values members">
+              <h3>Value Members</h3>
+              <ol>
+                <li name="scala.AnyRef#!=" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="!=(x$1:Any):Boolean"></a><a id="!=(Any):Boolean"></a>
+      <span class="permalink">
+      <a href="../../chess/controller/InternalState.html#!=(x$1:Any):Boolean" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: $bang$eq" class="name">!=</span><span class="params">(<span name="arg0">arg0: <span class="extype" name="scala.Any">Any</span></span>)</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd></dl></div>
+    </li><li name="scala.AnyRef###" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="##():Int"></a>
+      <span class="permalink">
+      <a href="../../chess/controller/InternalState.html###():Int" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: $hash$hash" class="name">##</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Int">Int</span></span>
+      </span>
+      
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd></dl></div>
+    </li><li name="scala.AnyRef#==" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="==(x$1:Any):Boolean"></a><a id="==(Any):Boolean"></a>
+      <span class="permalink">
+      <a href="../../chess/controller/InternalState.html#==(x$1:Any):Boolean" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: $eq$eq" class="name">==</span><span class="params">(<span name="arg0">arg0: <span class="extype" name="scala.Any">Any</span></span>)</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd></dl></div>
+    </li><li name="chess.controller.InternalState#activePlayer" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="activePlayer:chess.model.PlayerColor.PlayerColor"></a><a id="activePlayer:PlayerColor"></a>
+      <span class="permalink">
+      <a href="../../chess/controller/InternalState.html#activePlayer:chess.model.PlayerColor.PlayerColor" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">activePlayer</span><span class="result">: <a href="../model/PlayerColor$.html#PlayerColor=chess.model.PlayerColor.Value" class="extmbr" name="chess.model.PlayerColor.PlayerColor">PlayerColor</a></span>
+      </span>
+      
+      
+    </li><li name="chess.controller.InternalState#addAllPossibleMovesInDirection" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="addAllPossibleMovesInDirection(figure:chess.model.Figure,h:Int,v:Int):Vector[(Int,Int)]"></a><a id="addAllPossibleMovesInDirection(Figure,Int,Int):Vector[(Int,Int)]"></a>
+      <span class="permalink">
+      <a href="../../chess/controller/InternalState.html#addAllPossibleMovesInDirection(figure:chess.model.Figure,h:Int,v:Int):Vector[(Int,Int)]" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">addAllPossibleMovesInDirection</span><span class="params">(<span name="figure">figure: <a href="../model/Figure.html" class="extype" name="chess.model.Figure">Figure</a></span>, <span name="h">h: <span class="extype" name="scala.Int">Int</span></span>, <span name="v">v: <span class="extype" name="scala.Int">Int</span></span>)</span><span class="result">: <span class="extype" name="scala.Vector">Vector</span>[(<span class="extype" name="scala.Int">Int</span>, <span class="extype" name="scala.Int">Int</span>)]</span>
+      </span>
+      
+      
+    </li><li name="scala.Any#asInstanceOf" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="asInstanceOf[T0]:T0"></a>
+      <span class="permalink">
+      <a href="../../chess/controller/InternalState.html#asInstanceOf[T0]:T0" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">asInstanceOf</span><span class="tparams">[<span name="T0">T0</span>]</span><span class="result">: <span class="extype" name="scala.Any.asInstanceOf.T0">T0</span></span>
+      </span>
+      
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Any</dd></dl></div>
+    </li><li name="chess.model.Images#blackBishopImage" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="blackBishopImage:javax.swing.ImageIcon"></a><a id="blackBishopImage:ImageIcon"></a>
+      <span class="permalink">
+      <a href="../../chess/controller/InternalState.html#blackBishopImage:javax.swing.ImageIcon" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">blackBishopImage</span><span class="result">: <span class="extype" name="javax.swing.ImageIcon">ImageIcon</span></span>
+      </span>
+      
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../model/Images.html" class="extype" name="chess.model.Images">Images</a></dd></dl></div>
+    </li><li name="chess.controller.InternalState#blackFigures" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="blackFigures:Vector[chess.model.Figure]"></a><a id="blackFigures:Vector[Figure]"></a>
+      <span class="permalink">
+      <a href="../../chess/controller/InternalState.html#blackFigures:Vector[chess.model.Figure]" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">blackFigures</span><span class="result">: <span class="extype" name="scala.Vector">Vector</span>[<a href="../model/Figure.html" class="extype" name="chess.model.Figure">Figure</a>]</span>
+      </span>
+      
+      
+    </li><li name="chess.model.Images#blackKingImage" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="blackKingImage:javax.swing.ImageIcon"></a><a id="blackKingImage:ImageIcon"></a>
+      <span class="permalink">
+      <a href="../../chess/controller/InternalState.html#blackKingImage:javax.swing.ImageIcon" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">blackKingImage</span><span class="result">: <span class="extype" name="javax.swing.ImageIcon">ImageIcon</span></span>
+      </span>
+      
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../model/Images.html" class="extype" name="chess.model.Images">Images</a></dd></dl></div>
+    </li><li name="chess.model.Images#blackKnightImage" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="blackKnightImage:javax.swing.ImageIcon"></a><a id="blackKnightImage:ImageIcon"></a>
+      <span class="permalink">
+      <a href="../../chess/controller/InternalState.html#blackKnightImage:javax.swing.ImageIcon" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">blackKnightImage</span><span class="result">: <span class="extype" name="javax.swing.ImageIcon">ImageIcon</span></span>
+      </span>
+      
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../model/Images.html" class="extype" name="chess.model.Images">Images</a></dd></dl></div>
+    </li><li name="chess.controller.InternalState#blackPawnAttackMoves" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="blackPawnAttackMoves(pawn:chess.model.Figure):Vector[(Int,Int)]"></a><a id="blackPawnAttackMoves(Figure):Vector[(Int,Int)]"></a>
+      <span class="permalink">
+      <a href="../../chess/controller/InternalState.html#blackPawnAttackMoves(pawn:chess.model.Figure):Vector[(Int,Int)]" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">blackPawnAttackMoves</span><span class="params">(<span name="pawn">pawn: <a href="../model/Figure.html" class="extype" name="chess.model.Figure">Figure</a></span>)</span><span class="result">: <span class="extype" name="scala.Vector">Vector</span>[(<span class="extype" name="scala.Int">Int</span>, <span class="extype" name="scala.Int">Int</span>)]</span>
+      </span>
+      
+      
+    </li><li name="chess.model.Images#blackPawnImage" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="blackPawnImage:javax.swing.ImageIcon"></a><a id="blackPawnImage:ImageIcon"></a>
+      <span class="permalink">
+      <a href="../../chess/controller/InternalState.html#blackPawnImage:javax.swing.ImageIcon" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">blackPawnImage</span><span class="result">: <span class="extype" name="javax.swing.ImageIcon">ImageIcon</span></span>
+      </span>
+      
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../model/Images.html" class="extype" name="chess.model.Images">Images</a></dd></dl></div>
+    </li><li name="chess.model.Images#blackQueenImage" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="blackQueenImage:javax.swing.ImageIcon"></a><a id="blackQueenImage:ImageIcon"></a>
+      <span class="permalink">
+      <a href="../../chess/controller/InternalState.html#blackQueenImage:javax.swing.ImageIcon" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">blackQueenImage</span><span class="result">: <span class="extype" name="javax.swing.ImageIcon">ImageIcon</span></span>
+      </span>
+      
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../model/Images.html" class="extype" name="chess.model.Images">Images</a></dd></dl></div>
+    </li><li name="chess.model.Images#blackRookImage" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="blackRookImage:javax.swing.ImageIcon"></a><a id="blackRookImage:ImageIcon"></a>
+      <span class="permalink">
+      <a href="../../chess/controller/InternalState.html#blackRookImage:javax.swing.ImageIcon" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">blackRookImage</span><span class="result">: <span class="extype" name="javax.swing.ImageIcon">ImageIcon</span></span>
+      </span>
+      
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../model/Images.html" class="extype" name="chess.model.Images">Images</a></dd></dl></div>
+    </li><li name="chess.controller.InternalState#board" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="board:Vector[Vector[chess.model.Figure]]"></a><a id="board:Vector[Vector[Figure]]"></a>
+      <span class="permalink">
+      <a href="../../chess/controller/InternalState.html#board:Vector[Vector[chess.model.Figure]]" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">board</span><span class="result">: <span class="extype" name="scala.Vector">Vector</span>[<span class="extype" name="scala.Vector">Vector</span>[<a href="../model/Figure.html" class="extype" name="chess.model.Figure">Figure</a>]]</span>
+      </span>
+      
+      
+    </li><li name="scala.AnyRef#clone" visbl="prt" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="clone():Object"></a><a id="clone():AnyRef"></a>
+      <span class="permalink">
+      <a href="../../chess/controller/InternalState.html#clone():Object" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">clone</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.AnyRef">AnyRef</span></span>
+      </span>
+      
+      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>protected[<a href="../../java/lang/index.html" class="extype" name="java.lang">java.lang</a>] </dd><dt>Definition Classes</dt><dd>AnyRef</dd><dt>Annotations</dt><dd>
+                <span class="name">@native</span><span class="args">()</span>
+              
+                <span class="name">@HotSpotIntrinsicCandidate</span><span class="args">()</span>
+              
+                <span class="name">@throws</span><span class="args">(<span>
+      
+      <span class="defval" name="classOf[java.lang.CloneNotSupportedException]">...</span>
+    </span>)</span>
+              
+        </dd></dl></div>
+    </li><li name="scala.AnyRef#eq" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="eq(x$1:AnyRef):Boolean"></a><a id="eq(AnyRef):Boolean"></a>
+      <span class="permalink">
+      <a href="../../chess/controller/InternalState.html#eq(x$1:AnyRef):Boolean" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">eq</span><span class="params">(<span name="arg0">arg0: <span class="extype" name="scala.AnyRef">AnyRef</span></span>)</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
+    </li><li name="chess.controller.InternalState#findAllCoveredFields" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="findAllCoveredFields(color:chess.model.PlayerColor.PlayerColor):Vector[(Int,Int)]"></a><a id="findAllCoveredFields(PlayerColor):Vector[(Int,Int)]"></a>
+      <span class="permalink">
+      <a href="../../chess/controller/InternalState.html#findAllCoveredFields(color:chess.model.PlayerColor.PlayerColor):Vector[(Int,Int)]" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">findAllCoveredFields</span><span class="params">(<span name="color">color: <a href="../model/PlayerColor$.html#PlayerColor=chess.model.PlayerColor.Value" class="extmbr" name="chess.model.PlayerColor.PlayerColor">PlayerColor</a></span>)</span><span class="result">: <span class="extype" name="scala.Vector">Vector</span>[(<span class="extype" name="scala.Int">Int</span>, <span class="extype" name="scala.Int">Int</span>)]</span>
+      </span>
+      
+      
+    </li><li name="chess.controller.InternalState#findBishopPossibleMoves" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="findBishopPossibleMoves(figure:chess.model.Figure):Vector[(Int,Int)]"></a><a id="findBishopPossibleMoves(Figure):Vector[(Int,Int)]"></a>
+      <span class="permalink">
+      <a href="../../chess/controller/InternalState.html#findBishopPossibleMoves(figure:chess.model.Figure):Vector[(Int,Int)]" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">findBishopPossibleMoves</span><span class="params">(<span name="figure">figure: <a href="../model/Figure.html" class="extype" name="chess.model.Figure">Figure</a></span>)</span><span class="result">: <span class="extype" name="scala.Vector">Vector</span>[(<span class="extype" name="scala.Int">Int</span>, <span class="extype" name="scala.Int">Int</span>)]</span>
+      </span>
+      
+      
+    </li><li name="chess.controller.InternalState#findCoveredFields" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="findCoveredFields(figure:chess.model.Figure):Vector[(Int,Int)]"></a><a id="findCoveredFields(Figure):Vector[(Int,Int)]"></a>
+      <span class="permalink">
+      <a href="../../chess/controller/InternalState.html#findCoveredFields(figure:chess.model.Figure):Vector[(Int,Int)]" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">findCoveredFields</span><span class="params">(<span name="figure">figure: <a href="../model/Figure.html" class="extype" name="chess.model.Figure">Figure</a></span>)</span><span class="result">: <span class="extype" name="scala.Vector">Vector</span>[(<span class="extype" name="scala.Int">Int</span>, <span class="extype" name="scala.Int">Int</span>)]</span>
+      </span>
+      
+      
+    </li><li name="chess.controller.InternalState#findKingPossibleMoves" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="findKingPossibleMoves(f:chess.model.Figure):Vector[(Int,Int)]"></a><a id="findKingPossibleMoves(Figure):Vector[(Int,Int)]"></a>
+      <span class="permalink">
+      <a href="../../chess/controller/InternalState.html#findKingPossibleMoves(f:chess.model.Figure):Vector[(Int,Int)]" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">findKingPossibleMoves</span><span class="params">(<span name="f">f: <a href="../model/Figure.html" class="extype" name="chess.model.Figure">Figure</a></span>)</span><span class="result">: <span class="extype" name="scala.Vector">Vector</span>[(<span class="extype" name="scala.Int">Int</span>, <span class="extype" name="scala.Int">Int</span>)]</span>
+      </span>
+      
+      
+    </li><li name="chess.controller.InternalState#findKnightPossibleMoves" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="findKnightPossibleMoves(f:chess.model.Figure):Vector[(Int,Int)]"></a><a id="findKnightPossibleMoves(Figure):Vector[(Int,Int)]"></a>
+      <span class="permalink">
+      <a href="../../chess/controller/InternalState.html#findKnightPossibleMoves(f:chess.model.Figure):Vector[(Int,Int)]" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">findKnightPossibleMoves</span><span class="params">(<span name="f">f: <a href="../model/Figure.html" class="extype" name="chess.model.Figure">Figure</a></span>)</span><span class="result">: <span class="extype" name="scala.Vector">Vector</span>[(<span class="extype" name="scala.Int">Int</span>, <span class="extype" name="scala.Int">Int</span>)]</span>
+      </span>
+      
+      
+    </li><li name="chess.controller.InternalState#findPawnAttackMoves" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="findPawnAttackMoves(pawn:chess.model.Figure):Vector[(chess.model.Figure,(Int,Int))]"></a><a id="findPawnAttackMoves(Figure):Vector[(Figure,(Int,Int))]"></a>
+      <span class="permalink">
+      <a href="../../chess/controller/InternalState.html#findPawnAttackMoves(pawn:chess.model.Figure):Vector[(chess.model.Figure,(Int,Int))]" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">findPawnAttackMoves</span><span class="params">(<span name="pawn">pawn: <a href="../model/Figure.html" class="extype" name="chess.model.Figure">Figure</a></span>)</span><span class="result">: <span class="extype" name="scala.Vector">Vector</span>[(<a href="../model/Figure.html" class="extype" name="chess.model.Figure">Figure</a>, (<span class="extype" name="scala.Int">Int</span>, <span class="extype" name="scala.Int">Int</span>))]</span>
+      </span>
+      
+      
+    </li><li name="chess.controller.InternalState#findPawnPossibleMoves" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="findPawnPossibleMoves(figure:chess.model.Figure):Vector[(Int,Int)]"></a><a id="findPawnPossibleMoves(Figure):Vector[(Int,Int)]"></a>
+      <span class="permalink">
+      <a href="../../chess/controller/InternalState.html#findPawnPossibleMoves(figure:chess.model.Figure):Vector[(Int,Int)]" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">findPawnPossibleMoves</span><span class="params">(<span name="figure">figure: <a href="../model/Figure.html" class="extype" name="chess.model.Figure">Figure</a></span>)</span><span class="result">: <span class="extype" name="scala.Vector">Vector</span>[(<span class="extype" name="scala.Int">Int</span>, <span class="extype" name="scala.Int">Int</span>)]</span>
+      </span>
+      
+      
+    </li><li name="chess.controller.InternalState#findPossibleMoves" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="findPossibleMoves(figure:chess.model.Figure):Vector[(Int,Int)]"></a><a id="findPossibleMoves(Figure):Vector[(Int,Int)]"></a>
+      <span class="permalink">
+      <a href="../../chess/controller/InternalState.html#findPossibleMoves(figure:chess.model.Figure):Vector[(Int,Int)]" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">findPossibleMoves</span><span class="params">(<span name="figure">figure: <a href="../model/Figure.html" class="extype" name="chess.model.Figure">Figure</a></span>)</span><span class="result">: <span class="extype" name="scala.Vector">Vector</span>[(<span class="extype" name="scala.Int">Int</span>, <span class="extype" name="scala.Int">Int</span>)]</span>
+      </span>
+      
+      
+    </li><li name="chess.controller.InternalState#findQueenPossibleMoves" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="findQueenPossibleMoves(figure:chess.model.Figure):Vector[(Int,Int)]"></a><a id="findQueenPossibleMoves(Figure):Vector[(Int,Int)]"></a>
+      <span class="permalink">
+      <a href="../../chess/controller/InternalState.html#findQueenPossibleMoves(figure:chess.model.Figure):Vector[(Int,Int)]" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">findQueenPossibleMoves</span><span class="params">(<span name="figure">figure: <a href="../model/Figure.html" class="extype" name="chess.model.Figure">Figure</a></span>)</span><span class="result">: <span class="extype" name="scala.Vector">Vector</span>[(<span class="extype" name="scala.Int">Int</span>, <span class="extype" name="scala.Int">Int</span>)]</span>
+      </span>
+      
+      
+    </li><li name="chess.controller.InternalState#findRookPossibleMoves" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="findRookPossibleMoves(figure:chess.model.Figure):Vector[(Int,Int)]"></a><a id="findRookPossibleMoves(Figure):Vector[(Int,Int)]"></a>
+      <span class="permalink">
+      <a href="../../chess/controller/InternalState.html#findRookPossibleMoves(figure:chess.model.Figure):Vector[(Int,Int)]" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">findRookPossibleMoves</span><span class="params">(<span name="figure">figure: <a href="../model/Figure.html" class="extype" name="chess.model.Figure">Figure</a></span>)</span><span class="result">: <span class="extype" name="scala.Vector">Vector</span>[(<span class="extype" name="scala.Int">Int</span>, <span class="extype" name="scala.Int">Int</span>)]</span>
+      </span>
+      
+      
+    </li><li name="chess.controller.InternalState#getActiveFigures" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="getActiveFigures():Vector[chess.model.Figure]"></a><a id="getActiveFigures():Vector[Figure]"></a>
+      <span class="permalink">
+      <a href="../../chess/controller/InternalState.html#getActiveFigures():Vector[chess.model.Figure]" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">getActiveFigures</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Vector">Vector</span>[<a href="../model/Figure.html" class="extype" name="chess.model.Figure">Figure</a>]</span>
+      </span>
+      
+      
+    </li><li name="chess.controller.InternalState#getAllMoves" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="getAllMoves(color:chess.model.PlayerColor.PlayerColor):Vector[(chess.model.Figure,(Int,Int))]"></a><a id="getAllMoves(PlayerColor):Vector[(Figure,(Int,Int))]"></a>
+      <span class="permalink">
+      <a href="../../chess/controller/InternalState.html#getAllMoves(color:chess.model.PlayerColor.PlayerColor):Vector[(chess.model.Figure,(Int,Int))]" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">getAllMoves</span><span class="params">(<span name="color">color: <a href="../model/PlayerColor$.html#PlayerColor=chess.model.PlayerColor.Value" class="extmbr" name="chess.model.PlayerColor.PlayerColor">PlayerColor</a></span>)</span><span class="result">: <span class="extype" name="scala.Vector">Vector</span>[(<a href="../model/Figure.html" class="extype" name="chess.model.Figure">Figure</a>, (<span class="extype" name="scala.Int">Int</span>, <span class="extype" name="scala.Int">Int</span>))]</span>
+      </span>
+      
+      
+    </li><li name="chess.controller.InternalState#getAllMoves" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="getAllMoves():Vector[(chess.model.Figure,(Int,Int))]"></a><a id="getAllMoves():Vector[(Figure,(Int,Int))]"></a>
+      <span class="permalink">
+      <a href="../../chess/controller/InternalState.html#getAllMoves():Vector[(chess.model.Figure,(Int,Int))]" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">getAllMoves</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Vector">Vector</span>[(<a href="../model/Figure.html" class="extype" name="chess.model.Figure">Figure</a>, (<span class="extype" name="scala.Int">Int</span>, <span class="extype" name="scala.Int">Int</span>))]</span>
+      </span>
+      
+      
+    </li><li name="chess.controller.InternalState#getBlackFigures" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="getBlackFigures():Vector[chess.model.Figure]"></a><a id="getBlackFigures():Vector[Figure]"></a>
+      <span class="permalink">
+      <a href="../../chess/controller/InternalState.html#getBlackFigures():Vector[chess.model.Figure]" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">getBlackFigures</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Vector">Vector</span>[<a href="../model/Figure.html" class="extype" name="chess.model.Figure">Figure</a>]</span>
+      </span>
+      
+      
+    </li><li name="chess.controller.InternalState#getBoard" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="getBoard:Vector[Vector[chess.model.Figure]]"></a><a id="getBoard:Vector[Vector[Figure]]"></a>
+      <span class="permalink">
+      <a href="../../chess/controller/InternalState.html#getBoard:Vector[Vector[chess.model.Figure]]" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">getBoard</span><span class="result">: <span class="extype" name="scala.Vector">Vector</span>[<span class="extype" name="scala.Vector">Vector</span>[<a href="../model/Figure.html" class="extype" name="chess.model.Figure">Figure</a>]]</span>
+      </span>
+      
+      
+    </li><li name="chess.controller.InternalState#getChildren" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="getChildren():Vector[chess.controller.InternalState]"></a><a id="getChildren():Vector[InternalState]"></a>
+      <span class="permalink">
+      <a href="../../chess/controller/InternalState.html#getChildren():Vector[chess.controller.InternalState]" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">getChildren</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Vector">Vector</span>[<a href="" class="extype" name="chess.controller.InternalState">InternalState</a>]</span>
+      </span>
+      
+      
+    </li><li name="scala.AnyRef#getClass" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="getClass():Class[_]"></a>
+      <span class="permalink">
+      <a href="../../chess/controller/InternalState.html#getClass():Class[_]" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">getClass</span><span class="params">()</span><span class="result">: <span class="extype" name="java.lang.Class">Class</span>[_]</span>
+      </span>
+      
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd><dt>Annotations</dt><dd>
+                <span class="name">@native</span><span class="args">()</span>
+              
+                <span class="name">@HotSpotIntrinsicCandidate</span><span class="args">()</span>
+              
+        </dd></dl></div>
+    </li><li name="chess.controller.InternalState#getFigure" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="getFigure(x:Int,y:Int):chess.model.Figure"></a><a id="getFigure(Int,Int):Figure"></a>
+      <span class="permalink">
+      <a href="../../chess/controller/InternalState.html#getFigure(x:Int,y:Int):chess.model.Figure" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">getFigure</span><span class="params">(<span name="x">x: <span class="extype" name="scala.Int">Int</span></span>, <span name="y">y: <span class="extype" name="scala.Int">Int</span></span>)</span><span class="result">: <a href="../model/Figure.html" class="extype" name="chess.model.Figure">Figure</a></span>
+      </span>
+      
+      
+    </li><li name="chess.controller.InternalState#getFigure" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="getFigure(e:(Int,Int)):chess.model.Figure"></a><a id="getFigure((Int,Int)):Figure"></a>
+      <span class="permalink">
+      <a href="../../chess/controller/InternalState.html#getFigure(e:(Int,Int)):chess.model.Figure" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">getFigure</span><span class="params">(<span name="e">e: (<span class="extype" name="scala.Int">Int</span>, <span class="extype" name="scala.Int">Int</span>)</span>)</span><span class="result">: <a href="../model/Figure.html" class="extype" name="chess.model.Figure">Figure</a></span>
+      </span>
+      
+      
+    </li><li name="chess.controller.InternalState#getFigures" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="getFigures(color:chess.model.PlayerColor.PlayerColor):Vector[chess.model.Figure]"></a><a id="getFigures(PlayerColor):Vector[Figure]"></a>
+      <span class="permalink">
+      <a href="../../chess/controller/InternalState.html#getFigures(color:chess.model.PlayerColor.PlayerColor):Vector[chess.model.Figure]" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">getFigures</span><span class="params">(<span name="color">color: <a href="../model/PlayerColor$.html#PlayerColor=chess.model.PlayerColor.Value" class="extmbr" name="chess.model.PlayerColor.PlayerColor">PlayerColor</a></span>)</span><span class="result">: <span class="extype" name="scala.Vector">Vector</span>[<a href="../model/Figure.html" class="extype" name="chess.model.Figure">Figure</a>]</span>
+      </span>
+      
+      
+    </li><li name="chess.controller.InternalState#getMoves" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="getMoves(figure:chess.model.Figure):Vector[(chess.model.Figure,(Int,Int))]"></a><a id="getMoves(Figure):Vector[(Figure,(Int,Int))]"></a>
+      <span class="permalink">
+      <a href="../../chess/controller/InternalState.html#getMoves(figure:chess.model.Figure):Vector[(chess.model.Figure,(Int,Int))]" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">getMoves</span><span class="params">(<span name="figure">figure: <a href="../model/Figure.html" class="extype" name="chess.model.Figure">Figure</a></span>)</span><span class="result">: <span class="extype" name="scala.Vector">Vector</span>[(<a href="../model/Figure.html" class="extype" name="chess.model.Figure">Figure</a>, (<span class="extype" name="scala.Int">Int</span>, <span class="extype" name="scala.Int">Int</span>))]</span>
+      </span>
+      
+      
+    </li><li name="chess.controller.InternalState#getOpponentColor" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="getOpponentColor(color:chess.model.PlayerColor.PlayerColor):chess.model.PlayerColor.PlayerColor"></a><a id="getOpponentColor(PlayerColor):PlayerColor"></a>
+      <span class="permalink">
+      <a href="../../chess/controller/InternalState.html#getOpponentColor(color:chess.model.PlayerColor.PlayerColor):chess.model.PlayerColor.PlayerColor" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">getOpponentColor</span><span class="params">(<span name="color">color: <a href="../model/PlayerColor$.html#PlayerColor=chess.model.PlayerColor.Value" class="extmbr" name="chess.model.PlayerColor.PlayerColor">PlayerColor</a></span>)</span><span class="result">: <a href="../model/PlayerColor$.html#PlayerColor=chess.model.PlayerColor.Value" class="extmbr" name="chess.model.PlayerColor.PlayerColor">PlayerColor</a></span>
+      </span>
+      
+      
+    </li><li name="chess.controller.InternalState#getWhiteFigures" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="getWhiteFigures():Vector[chess.model.Figure]"></a><a id="getWhiteFigures():Vector[Figure]"></a>
+      <span class="permalink">
+      <a href="../../chess/controller/InternalState.html#getWhiteFigures():Vector[chess.model.Figure]" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">getWhiteFigures</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Vector">Vector</span>[<a href="../model/Figure.html" class="extype" name="chess.model.Figure">Figure</a>]</span>
+      </span>
+      
+      
+    </li><li name="scala.Any#isInstanceOf" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="isInstanceOf[T0]:Boolean"></a>
+      <span class="permalink">
+      <a href="../../chess/controller/InternalState.html#isInstanceOf[T0]:Boolean" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">isInstanceOf</span><span class="tparams">[<span name="T0">T0</span>]</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Any</dd></dl></div>
+    </li><li name="chess.controller.InternalState#isKingAttacked" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="isKingAttacked(kingColor:chess.model.PlayerColor.PlayerColor):Boolean"></a><a id="isKingAttacked(PlayerColor):Boolean"></a>
+      <span class="permalink">
+      <a href="../../chess/controller/InternalState.html#isKingAttacked(kingColor:chess.model.PlayerColor.PlayerColor):Boolean" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">isKingAttacked</span><span class="params">(<span name="kingColor">kingColor: <a href="../model/PlayerColor$.html#PlayerColor=chess.model.PlayerColor.Value" class="extmbr" name="chess.model.PlayerColor.PlayerColor">PlayerColor</a></span>)</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      
+      
+    </li><li name="chess.controller.InternalState#makeMove" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="makeMove(figure:chess.model.Figure,destination:(Int,Int)):chess.controller.InternalState"></a><a id="makeMove(Figure,(Int,Int)):InternalState"></a>
+      <span class="permalink">
+      <a href="../../chess/controller/InternalState.html#makeMove(figure:chess.model.Figure,destination:(Int,Int)):chess.controller.InternalState" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">makeMove</span><span class="params">(<span name="figure">figure: <a href="../model/Figure.html" class="extype" name="chess.model.Figure">Figure</a></span>, <span name="destination">destination: (<span class="extype" name="scala.Int">Int</span>, <span class="extype" name="scala.Int">Int</span>)</span>)</span><span class="result">: <a href="" class="extype" name="chess.controller.InternalState">InternalState</a></span>
+      </span>
+      
+      
+    </li><li name="chess.controller.InternalState#makeMove" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="makeMove(x:(chess.model.Figure,(Int,Int))):chess.controller.InternalState"></a><a id="makeMove((Figure,(Int,Int))):InternalState"></a>
+      <span class="permalink">
+      <a href="../../chess/controller/InternalState.html#makeMove(x:(chess.model.Figure,(Int,Int))):chess.controller.InternalState" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">makeMove</span><span class="params">(<span name="x">x: (<a href="../model/Figure.html" class="extype" name="chess.model.Figure">Figure</a>, (<span class="extype" name="scala.Int">Int</span>, <span class="extype" name="scala.Int">Int</span>))</span>)</span><span class="result">: <a href="" class="extype" name="chess.controller.InternalState">InternalState</a></span>
+      </span>
+      
+      <p class="shortcomment cmt">Returns a new internal state with figure sets and board updated according to the given parameters that represent the move.</p>
+    </li><li name="scala.AnyRef#ne" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="ne(x$1:AnyRef):Boolean"></a><a id="ne(AnyRef):Boolean"></a>
+      <span class="permalink">
+      <a href="../../chess/controller/InternalState.html#ne(x$1:AnyRef):Boolean" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">ne</span><span class="params">(<span name="arg0">arg0: <span class="extype" name="scala.AnyRef">AnyRef</span></span>)</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
+    </li><li name="scala.AnyRef#notify" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="notify():Unit"></a>
+      <span class="permalink">
+      <a href="../../chess/controller/InternalState.html#notify():Unit" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">notify</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd><dt>Annotations</dt><dd>
+                <span class="name">@native</span><span class="args">()</span>
+              
+                <span class="name">@HotSpotIntrinsicCandidate</span><span class="args">()</span>
+              
+        </dd></dl></div>
+    </li><li name="scala.AnyRef#notifyAll" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="notifyAll():Unit"></a>
+      <span class="permalink">
+      <a href="../../chess/controller/InternalState.html#notifyAll():Unit" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">notifyAll</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd><dt>Annotations</dt><dd>
+                <span class="name">@native</span><span class="args">()</span>
+              
+                <span class="name">@HotSpotIntrinsicCandidate</span><span class="args">()</span>
+              
+        </dd></dl></div>
+    </li><li name="scala.AnyRef#synchronized" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="synchronized[T0](x$1:=&gt;T0):T0"></a><a id="synchronized[T0](⇒T0):T0"></a>
+      <span class="permalink">
+      <a href="../../chess/controller/InternalState.html#synchronized[T0](x$1:=&gt;T0):T0" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">synchronized</span><span class="tparams">[<span name="T0">T0</span>]</span><span class="params">(<span name="arg0">arg0: ⇒ <span class="extype" name="java.lang.AnyRef.synchronized.T0">T0</span></span>)</span><span class="result">: <span class="extype" name="java.lang.AnyRef.synchronized.T0">T0</span></span>
+      </span>
+      
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
+    </li><li name="scala.AnyRef#wait" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="wait(x$1:Long,x$2:Int):Unit"></a><a id="wait(Long,Int):Unit"></a>
+      <span class="permalink">
+      <a href="../../chess/controller/InternalState.html#wait(x$1:Long,x$2:Int):Unit" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">wait</span><span class="params">(<span name="arg0">arg0: <span class="extype" name="scala.Long">Long</span></span>, <span name="arg1">arg1: <span class="extype" name="scala.Int">Int</span></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd><dt>Annotations</dt><dd>
+                <span class="name">@throws</span><span class="args">(<span>
+      
+      <span class="defval" name="classOf[java.lang.InterruptedException]">...</span>
+    </span>)</span>
+              
+        </dd></dl></div>
+    </li><li name="scala.AnyRef#wait" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="wait(x$1:Long):Unit"></a><a id="wait(Long):Unit"></a>
+      <span class="permalink">
+      <a href="../../chess/controller/InternalState.html#wait(x$1:Long):Unit" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">wait</span><span class="params">(<span name="arg0">arg0: <span class="extype" name="scala.Long">Long</span></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd><dt>Annotations</dt><dd>
+                <span class="name">@native</span><span class="args">()</span>
+              
+                <span class="name">@throws</span><span class="args">(<span>
+      
+      <span class="defval" name="classOf[java.lang.InterruptedException]">...</span>
+    </span>)</span>
+              
+        </dd></dl></div>
+    </li><li name="scala.AnyRef#wait" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="wait():Unit"></a>
+      <span class="permalink">
+      <a href="../../chess/controller/InternalState.html#wait():Unit" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">wait</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd><dt>Annotations</dt><dd>
+                <span class="name">@throws</span><span class="args">(<span>
+      
+      <span class="defval" name="classOf[java.lang.InterruptedException]">...</span>
+    </span>)</span>
+              
+        </dd></dl></div>
+    </li><li name="chess.model.Images#whiteBishopImage" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="whiteBishopImage:javax.swing.ImageIcon"></a><a id="whiteBishopImage:ImageIcon"></a>
+      <span class="permalink">
+      <a href="../../chess/controller/InternalState.html#whiteBishopImage:javax.swing.ImageIcon" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">whiteBishopImage</span><span class="result">: <span class="extype" name="javax.swing.ImageIcon">ImageIcon</span></span>
+      </span>
+      
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../model/Images.html" class="extype" name="chess.model.Images">Images</a></dd></dl></div>
+    </li><li name="chess.controller.InternalState#whiteFigures" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="whiteFigures:Vector[chess.model.Figure]"></a><a id="whiteFigures:Vector[Figure]"></a>
+      <span class="permalink">
+      <a href="../../chess/controller/InternalState.html#whiteFigures:Vector[chess.model.Figure]" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">whiteFigures</span><span class="result">: <span class="extype" name="scala.Vector">Vector</span>[<a href="../model/Figure.html" class="extype" name="chess.model.Figure">Figure</a>]</span>
+      </span>
+      
+      
+    </li><li name="chess.model.Images#whiteKingImage" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="whiteKingImage:javax.swing.ImageIcon"></a><a id="whiteKingImage:ImageIcon"></a>
+      <span class="permalink">
+      <a href="../../chess/controller/InternalState.html#whiteKingImage:javax.swing.ImageIcon" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">whiteKingImage</span><span class="result">: <span class="extype" name="javax.swing.ImageIcon">ImageIcon</span></span>
+      </span>
+      
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../model/Images.html" class="extype" name="chess.model.Images">Images</a></dd></dl></div>
+    </li><li name="chess.model.Images#whiteKnightImage" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="whiteKnightImage:javax.swing.ImageIcon"></a><a id="whiteKnightImage:ImageIcon"></a>
+      <span class="permalink">
+      <a href="../../chess/controller/InternalState.html#whiteKnightImage:javax.swing.ImageIcon" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">whiteKnightImage</span><span class="result">: <span class="extype" name="javax.swing.ImageIcon">ImageIcon</span></span>
+      </span>
+      
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../model/Images.html" class="extype" name="chess.model.Images">Images</a></dd></dl></div>
+    </li><li name="chess.controller.InternalState#whitePawnAttackMoves" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="whitePawnAttackMoves(pawn:chess.model.Figure):Vector[(Int,Int)]"></a><a id="whitePawnAttackMoves(Figure):Vector[(Int,Int)]"></a>
+      <span class="permalink">
+      <a href="../../chess/controller/InternalState.html#whitePawnAttackMoves(pawn:chess.model.Figure):Vector[(Int,Int)]" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">whitePawnAttackMoves</span><span class="params">(<span name="pawn">pawn: <a href="../model/Figure.html" class="extype" name="chess.model.Figure">Figure</a></span>)</span><span class="result">: <span class="extype" name="scala.Vector">Vector</span>[(<span class="extype" name="scala.Int">Int</span>, <span class="extype" name="scala.Int">Int</span>)]</span>
+      </span>
+      
+      
+    </li><li name="chess.model.Images#whitePawnImage" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="whitePawnImage:javax.swing.ImageIcon"></a><a id="whitePawnImage:ImageIcon"></a>
+      <span class="permalink">
+      <a href="../../chess/controller/InternalState.html#whitePawnImage:javax.swing.ImageIcon" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">whitePawnImage</span><span class="result">: <span class="extype" name="javax.swing.ImageIcon">ImageIcon</span></span>
+      </span>
+      
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../model/Images.html" class="extype" name="chess.model.Images">Images</a></dd></dl></div>
+    </li><li name="chess.model.Images#whiteQueenImage" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="whiteQueenImage:javax.swing.ImageIcon"></a><a id="whiteQueenImage:ImageIcon"></a>
+      <span class="permalink">
+      <a href="../../chess/controller/InternalState.html#whiteQueenImage:javax.swing.ImageIcon" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">whiteQueenImage</span><span class="result">: <span class="extype" name="javax.swing.ImageIcon">ImageIcon</span></span>
+      </span>
+      
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../model/Images.html" class="extype" name="chess.model.Images">Images</a></dd></dl></div>
+    </li><li name="chess.model.Images#whiteRookImage" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="whiteRookImage:javax.swing.ImageIcon"></a><a id="whiteRookImage:ImageIcon"></a>
+      <span class="permalink">
+      <a href="../../chess/controller/InternalState.html#whiteRookImage:javax.swing.ImageIcon" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">whiteRookImage</span><span class="result">: <span class="extype" name="javax.swing.ImageIcon">ImageIcon</span></span>
+      </span>
+      
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../model/Images.html" class="extype" name="chess.model.Images">Images</a></dd></dl></div>
+    </li>
+              </ol>
+            </div>
+
+        
+
+        <div class="values members">
+              <h3>Deprecated Value Members</h3>
+              <ol><li name="scala.AnyRef#finalize" visbl="prt" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="finalize():Unit"></a>
+      <span class="permalink">
+      <a href="../../chess/controller/InternalState.html#finalize():Unit" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name deprecated" title="Deprecated: (Since version ) see corresponding Javadoc for more information.">finalize</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      
+      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>protected[<a href="../../java/lang/index.html" class="extype" name="java.lang">java.lang</a>] </dd><dt>Definition Classes</dt><dd>AnyRef</dd><dt>Annotations</dt><dd>
+                <span class="name">@Deprecated</span>
+              
+                <span class="name">@deprecated</span>
+              
+                <span class="name">@throws</span><span class="args">(<span>
+      
+      <span class="symbol">classOf[java.lang.Throwable]</span>
+    </span>)</span>
+              
+        </dd><dt>Deprecated</dt><dd class="cmt"><p><i>(Since version )</i> see corresponding Javadoc for more information.</p></dd></dl></div>
+    </li></ol>
+            </div>
+        </div>
+
+        <div id="inheritedMembers">
+        <div class="parent" name="scala.Serializable">
+              <h3>Inherited from <span class="extype" name="scala.Serializable">Serializable</span></h3>
+            </div><div class="parent" name="java.io.Serializable">
+              <h3>Inherited from <span class="extype" name="java.io.Serializable">Serializable</span></h3>
+            </div><div class="parent" name="scala.Product">
+              <h3>Inherited from <span class="extype" name="scala.Product">Product</span></h3>
+            </div><div class="parent" name="scala.Equals">
+              <h3>Inherited from <span class="extype" name="scala.Equals">Equals</span></h3>
+            </div><div class="parent" name="chess.model.Images">
+              <h3>Inherited from <a href="../model/Images.html" class="extype" name="chess.model.Images">Images</a></h3>
+            </div><div class="parent" name="scala.AnyRef">
+              <h3>Inherited from <span class="extype" name="scala.AnyRef">AnyRef</span></h3>
+            </div><div class="parent" name="scala.Any">
+              <h3>Inherited from <span class="extype" name="scala.Any">Any</span></h3>
+            </div>
+        
+        </div>
+
+        <div id="groupedMembers">
+        <div class="group" name="Ungrouped">
+              <h3>Ungrouped</h3>
+              
+            </div>
+        </div>
+
+      </div>
+
+      <div id="tooltip"></div>
+
+      <div id="footer">  </div>
+    </body>
+          </div>
+        </div>
+      </div>
+    </body>
+      </html>
