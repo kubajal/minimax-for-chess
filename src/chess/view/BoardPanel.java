@@ -53,6 +53,7 @@ public class BoardPanel extends JFrame {
             figure = f;
             removeAll();
             add(f.getFigureImage());
+            repaint(5);
         }
         Field(int _x, int _y){
             x = _x;
@@ -240,13 +241,15 @@ public class BoardPanel extends JFrame {
 
         for(Figure f : whiteFigures){
             board[f.x()][f.y()].setFigure(f);
+            board[f.x()][f.y()].repaint();
         }
 
         for(Figure f : blackFigures){
             board[f.x()][f.y()].setFigure(f);
+            board[f.x()][f.y()].repaint();
         }
 
-        this.repaint();
+        repaint();
     }
 
 	public void displayGameOverInfo(String gameOverInfoString) {

@@ -2,6 +2,7 @@ package chess.controller
 
 import chess.model.PlayerColor.PlayerColor
 import chess.model.{Figure, FigureType, Images, PlayerColor}
+import javax.swing.JLabel
 
 import scala.annotation.tailrec
 import scala.collection.immutable.VectorBuilder
@@ -17,7 +18,7 @@ import scala.collection.immutable.VectorBuilder
   */
 
 case class InternalState(val whiteFigures : Vector[Figure], val blackFigures : Vector[Figure], val board: Vector[Vector[Figure]],
-                         val activePlayer : PlayerColor) extends Images {
+                         val activePlayer : PlayerColor){
 
   def getActiveFigures()  : Vector[Figure] = return getFigures(activePlayer)
 
@@ -90,17 +91,17 @@ case class InternalState(val whiteFigures : Vector[Figure], val blackFigures : V
       case FigureType.Rook => findRookPossibleMoves(figure)
       case FigureType.King => findKingPossibleMoves(figure)
     }
-    return possibleMoves.filterNot(m => makeMove(figure, m).isKingAttacked(figure.getColor()))
+    return possibleMoves.filterNot(m => board(m._1)(m._2) != null && board(m._1)(m._2).getType() == FigureType.King).filterNot(m => makeMove(figure, m).isKingAttacked(figure.getColor()))
 	}
 
   def whitePawnAttackMoves(pawn : Figure) : Vector[(Int, Int)] = {
     val moves = Vector[(Int, Int)]((pawn.x-1, pawn.y+1), (pawn.x+1, pawn.y+1))
-    return moves.filter(m => m._1 > 0 && m._1 < 8 && m._2 > 0 && m._2 < 8)
+    return moves.filter(m => m._1 >= 0 && m._1 < 8 && m._2 >= 0 && m._2 < 8)
   }
 
   def blackPawnAttackMoves(pawn : Figure) : Vector[(Int, Int)] = {
     val moves = Vector[(Int, Int)]((pawn.x-1, pawn.y-1), (pawn.x+1, pawn.y-1))
-    return moves.filter(m => m._1 > 0 && m._1 < 8 && m._2 > 0 && m._2 < 8)
+    return moves.filter(m => m._1 >= 0 && m._1 < 8 && m._2 >= 0 && m._2 < 8)
   }
 
   def findPawnPossibleMoves(figure : Figure) : Vector[(Int, Int)] = {
@@ -153,7 +154,11 @@ case class InternalState(val whiteFigures : Vector[Figure], val blackFigures : V
 
   def makeMove(figure : Figure, destination: (Int, Int)) : InternalState = {
 
-    val newFigure = new Figure(figure.getType, figure.getColor, destination._1, destination._2, figure.getFigureImage)
+    val newFigure =
+      if(figure.getType() == FigureType.Pawn && (destination._2 == 0 || destination._2 == 7))
+        new Figure(FigureType.Queen, figure.getColor, destination._1, destination._2, if(figure.getColor == PlayerColor.White) new JLabel(Images.getWhiteQueenImage) else new JLabel(Images.getBlackQueenImage))
+    else
+        new Figure(figure.getType(), figure.getColor, destination._1, destination._2, figure.getFigureImage)
 
     val t1 = board(figure.x).updated(figure.y, null)
     val t2 = board.updated(figure.x, t1)

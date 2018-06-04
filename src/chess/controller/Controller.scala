@@ -15,7 +15,7 @@ import chess.runnables.moveRunnable
   * @param playerColor - The color of the human player.
   */
 
-case class Controller(val playerColor: PlayerColor = PlayerColor.White) extends Images {
+case class Controller(val playerColor: PlayerColor = PlayerColor.White) {
 
   var boardPanel : BoardPanel = null
   val whiteFigures = createWhiteFigures
@@ -30,44 +30,44 @@ case class Controller(val playerColor: PlayerColor = PlayerColor.White) extends 
   def createWhiteFigures(): Vector[Figure] = {
 
     return Vector[Figure](
-      new Figure(FigureType.Queen, PlayerColor.White, 3, 0, new JLabel(whiteQueenImage)),
-      new Figure(FigureType.Rook, PlayerColor.White, 7, 0, new JLabel(whiteRookImage)),
-      new Figure(FigureType.Rook, PlayerColor.White, 0, 0, new JLabel(whiteRookImage)),
-      new Figure(FigureType.Knight, PlayerColor.White, 1, 0, new JLabel(whiteKnightImage)),
-      new Figure(FigureType.Knight, PlayerColor.White, 6, 0, new JLabel(whiteKnightImage)),
-      new Figure(FigureType.Bishop, PlayerColor.White, 2, 0, new JLabel(whiteBishopImage)),
-      new Figure(FigureType.Bishop, PlayerColor.White, 5, 0, new JLabel(whiteBishopImage)),
-      new Figure(FigureType.King, PlayerColor.White, 4, 0, new JLabel(whiteKingImage)),
-      new Figure(FigureType.Pawn, PlayerColor.White, 0, 1, new JLabel(whitePawnImage)),
-      new Figure(FigureType.Pawn, PlayerColor.White, 1, 1, new JLabel(whitePawnImage)),
-      new Figure(FigureType.Pawn, PlayerColor.White, 2, 1, new JLabel(whitePawnImage)),
-      new Figure(FigureType.Pawn, PlayerColor.White, 3, 1, new JLabel(whitePawnImage)),
-      new Figure(FigureType.Pawn, PlayerColor.White, 4, 1, new JLabel(whitePawnImage)),
-      new Figure(FigureType.Pawn, PlayerColor.White, 5, 1, new JLabel(whitePawnImage)),
-      new Figure(FigureType.Pawn, PlayerColor.White, 6, 1, new JLabel(whitePawnImage)),
-      new Figure(FigureType.Pawn, PlayerColor.White, 7, 1, new JLabel(whitePawnImage))
+      new Figure(FigureType.Queen, PlayerColor.White, 3, 0, new JLabel(Images.getWhiteQueenImage)),
+      new Figure(FigureType.Rook, PlayerColor.White, 7, 0, new JLabel(Images.getWhiteRookImage)),
+      new Figure(FigureType.Rook, PlayerColor.White, 0, 0, new JLabel(Images.getWhiteRookImage)),
+      new Figure(FigureType.Knight, PlayerColor.White, 1, 0, new JLabel(Images.getWhiteKnightImage)),
+      new Figure(FigureType.Knight, PlayerColor.White, 6, 0, new JLabel(Images.getWhiteKnightImage)),
+      new Figure(FigureType.Bishop, PlayerColor.White, 2, 0, new JLabel(Images.getWhiteBishopImage)),
+      new Figure(FigureType.Bishop, PlayerColor.White, 5, 0, new JLabel(Images.getWhiteBishopImage)),
+      new Figure(FigureType.King, PlayerColor.White, 4, 0, new JLabel(Images.getWhiteKingImage)),
+      new Figure(FigureType.Pawn, PlayerColor.White, 0, 1, new JLabel(Images.getWhitePawnImage)),
+      new Figure(FigureType.Pawn, PlayerColor.White, 1, 1, new JLabel(Images.getWhitePawnImage)),
+      new Figure(FigureType.Pawn, PlayerColor.White, 2, 1, new JLabel(Images.getWhitePawnImage)),
+      new Figure(FigureType.Pawn, PlayerColor.White, 3, 1, new JLabel(Images.getWhitePawnImage)),
+      new Figure(FigureType.Pawn, PlayerColor.White, 4, 1, new JLabel(Images.getWhitePawnImage)),
+      new Figure(FigureType.Pawn, PlayerColor.White, 5, 1, new JLabel(Images.getWhitePawnImage)),
+      new Figure(FigureType.Pawn, PlayerColor.White, 6, 1, new JLabel(Images.getWhitePawnImage)),
+      new Figure(FigureType.Pawn, PlayerColor.White, 7, 1, new JLabel(Images.getWhitePawnImage))
     )
   }
 
   def createBlackFigures(): Vector[Figure] = {
 
     return Vector[Figure](
-      new Figure(FigureType.Queen, PlayerColor.Black, 3, 7, new JLabel(blackQueenImage)),
-      new Figure(FigureType.Rook, PlayerColor.Black, 7, 7, new JLabel(blackRookImage)),
-      new Figure(FigureType.Rook, PlayerColor.Black, 0, 7, new JLabel(blackRookImage)),
-      new Figure(FigureType.Knight, PlayerColor.Black, 1, 7, new JLabel(blackKnightImage)),
-      new Figure(FigureType.Knight, PlayerColor.Black, 6, 7, new JLabel(blackKnightImage)),
-      new Figure(FigureType.Bishop, PlayerColor.Black, 2, 7, new JLabel(blackBishopImage)),
-      new Figure(FigureType.Bishop, PlayerColor.Black, 5, 7, new JLabel(blackBishopImage)),
-      new Figure(FigureType.King, PlayerColor.Black, 4, 7, new JLabel(blackKingImage)),
-      new Figure(FigureType.Pawn, PlayerColor.Black, 0, 6, new JLabel(blackPawnImage)),
-      new Figure(FigureType.Pawn, PlayerColor.Black, 1, 6, new JLabel(blackPawnImage)),
-      new Figure(FigureType.Pawn, PlayerColor.Black, 2, 6, new JLabel(blackPawnImage)),
-      new Figure(FigureType.Pawn, PlayerColor.Black, 3, 6, new JLabel(blackPawnImage)),
-      new Figure(FigureType.Pawn, PlayerColor.Black, 4, 6, new JLabel(blackPawnImage)),
-      new Figure(FigureType.Pawn, PlayerColor.Black, 5, 6, new JLabel(blackPawnImage)),
-      new Figure(FigureType.Pawn, PlayerColor.Black, 6, 6, new JLabel(blackPawnImage)),
-      new Figure(FigureType.Pawn, PlayerColor.Black, 7, 6, new JLabel(blackPawnImage))
+      new Figure(FigureType.Queen, PlayerColor.Black, 3, 7, new JLabel(Images.getBlackQueenImage)),
+      new Figure(FigureType.Rook, PlayerColor.Black, 7, 7, new JLabel(Images.getBlackRookImage)),
+      new Figure(FigureType.Rook, PlayerColor.Black, 0, 7, new JLabel(Images.getBlackRookImage)),
+      new Figure(FigureType.Knight, PlayerColor.Black, 1, 7, new JLabel(Images.getBlackKnightImage)),
+      new Figure(FigureType.Knight, PlayerColor.Black, 6, 7, new JLabel(Images.getBlackKnightImage)),
+      new Figure(FigureType.Bishop, PlayerColor.Black, 2, 7, new JLabel(Images.getBlackBishopImage)),
+      new Figure(FigureType.Bishop, PlayerColor.Black, 5, 7, new JLabel(Images.getBlackBishopImage)),
+      new Figure(FigureType.King, PlayerColor.Black, 4, 7, new JLabel(Images.getBlackKingImage)),
+      new Figure(FigureType.Pawn, PlayerColor.Black, 0, 6, new JLabel(Images.getBlackPawnImage)),
+      new Figure(FigureType.Pawn, PlayerColor.Black, 1, 6, new JLabel(Images.getBlackPawnImage)),
+      new Figure(FigureType.Pawn, PlayerColor.Black, 2, 6, new JLabel(Images.getBlackPawnImage)),
+      new Figure(FigureType.Pawn, PlayerColor.Black, 3, 6, new JLabel(Images.getBlackPawnImage)),
+      new Figure(FigureType.Pawn, PlayerColor.Black, 4, 6, new JLabel(Images.getBlackPawnImage)),
+      new Figure(FigureType.Pawn, PlayerColor.Black, 5, 6, new JLabel(Images.getBlackPawnImage)),
+      new Figure(FigureType.Pawn, PlayerColor.Black, 6, 6, new JLabel(Images.getBlackPawnImage)),
+      new Figure(FigureType.Pawn, PlayerColor.Black, 7, 6, new JLabel(Images.getBlackPawnImage))
     )
   }
 
