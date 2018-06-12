@@ -52,14 +52,14 @@ class Evaluator(val maximizing : PlayerColor) {
     Array(9, 9, 9, 9, 9, 9, 9, 9)
   )
   val queenTable : Array[Array[Int]] = Array(
-    Array(12, 12, 12, 12, 12, 12, 12, 12),
-    Array(12, 15, 16, 16, 16, 16, 15, 12),
-    Array(12, 15, 18, 20, 20, 18, 15, 12),
-    Array(12, 15, 20, 20, 20, 20, 15, 12),
-    Array(12, 15, 20, 20, 20, 20, 15, 12),
-    Array(12, 15, 18, 20, 20, 18, 15, 12),
-    Array(12, 15, 16, 16, 16, 16, 15, 12),
-    Array(12, 12, 12, 12, 12, 12, 12, 12),
+    Array(20, 20, 20, 20, 20, 20, 20, 20),
+    Array(20, 20, 20, 20, 20, 20, 20, 20),
+    Array(20, 20, 20, 20, 20, 20, 20, 20),
+    Array(20, 20, 20, 20, 20, 20, 20, 20),
+    Array(20, 20, 20, 20, 20, 20, 20, 20),
+    Array(20, 20, 20, 20, 20, 20, 20, 20),
+    Array(20, 20, 20, 20, 20, 20, 20, 20),
+    Array(20, 20, 20, 20, 20, 20, 20, 20),
   )
   val kingTable : Array[Array[Int]] = Array(
     Array(12, 12, 12, 12, 12, 12, 12, 12),
@@ -99,7 +99,7 @@ class Evaluator(val maximizing : PlayerColor) {
     */
   def evaluateState(internalState : InternalState) : Int = {
     val minimizing = internalState.getOpponentColor(maximizing)
-    return internalState.getFigures(maximizing).map(f => if(f == null) 0 else evaluate(f)).sum -
-      internalState.getFigures(minimizing).map(f => if(f == null) 0 else evaluate(f)).sum
+    return internalState.getFigures(maximizing).map(f => evaluate(f)).sum -
+      internalState.getFigures(minimizing).map(f => evaluate(f)).sum
   }
 }

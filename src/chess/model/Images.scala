@@ -22,28 +22,4 @@ object Images {
   def getBlackRookImage = new ImageIcon(getClass.getResource("/chess/images/black_rook.png"))
   def getBlackQueenImage = new ImageIcon(getClass.getResource("/chess/images/black_queen.png"))
   def getBlackKingImage = new ImageIcon(getClass.getResource("/chess/images/black_king.png"))
-/*
-  var i = -1
-  val whiteQueenImages = new Vector[ImageIcon](
-    new ImageIcon(getClass.getResource("/chess/images/white_queen.png")),
-    new ImageIcon(getClass.getResource("/chess/images/white_queen.png")),
-    new ImageIcon(getClass.getResource("/chess/images/white_queen.png")),
-    new ImageIcon(getClass.getResource("/chess/images/white_queen.png")),
-    new ImageIcon(getClass.getResource("/chess/images/white_queen.png")),
-    new ImageIcon(getClass.getResource("/chess/images/white_queen.png")),
-    new ImageIcon(getClass.getResource("/chess/images/white_queen.png")),
-    new ImageIcon(getClass.getResource("/chess/images/white_queen.png")),
-    new ImageIcon(getClass.getResource("/chess/images/white_queen.png"))
-  )
-  var j = -1
-  val blackQueenImages =
-      new ImageIcon(getClass.getResource("/chess/images/black_queen.png")) ++
-      new ImageIcon(getClass.getResource("/chess/images/black_queen.png")) ++
-      new ImageIcon(getClass.getResource("/chess/images/black_queen.png")) ++
-      new ImageIcon(getClass.getResource("/chess/images/black_queen.png")) ++
-      new ImageIcon(getClass.getResource("/chess/images/black_queen.png")) ++
-      new ImageIcon(getClass.getResource("/chess/images/black_queen.png")) ++
-      new ImageIcon(getClass.getResource("/chess/images/black_queen.png")) ++
-      new ImageIcon(getClass.getResource("/chess/images/black_queen.png")) ++
-      new ImageIcon(getClass.getResource("/chess/images/black_queen.png"))*/
 }

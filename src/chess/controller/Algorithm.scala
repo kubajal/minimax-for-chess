@@ -22,7 +22,7 @@ class Algorithm(val initialState : InternalState, val depth : Int) {
 
   @tailrec
   private def minIteration(alpha : Int, beta : Int, height : Int, i : Int, states: Vector[InternalState]) : Int = {
-    val newBeta = max(alpha, beta, height - 1, states(i))
+    val newBeta = min(alpha, beta, height - 1, states(i))
     if(newBeta <= alpha)
       return alpha
     if(i == states.size - 1){
@@ -37,7 +37,7 @@ class Algorithm(val initialState : InternalState, val depth : Int) {
 
   @tailrec
   private def maxIteration(alpha : Int, beta : Int, height : Int, i : Int, states: Vector[InternalState]) : Int = {
-    val newAlpha = min(alpha, beta, height - 1, states(i))
+    val newAlpha = max(alpha, beta, height - 1, states(i))
     if(newAlpha>= beta)
       return beta
     if(i == states.size - 1){
@@ -73,9 +73,8 @@ class Algorithm(val initialState : InternalState, val depth : Int) {
     return newAlpha
   }
 
-  @tailrec
   private def rootIteration(maxIndex : Int, alpha : Int, beta : Int, height : Int, i : Int, states: Vector[InternalState]) : (Int, Int) = {
-    val newAlpha = min(alpha, beta, height - 1, states(i))
+    val newAlpha = max(alpha, beta, height - 1, states(i))
     if (newAlpha >= beta)
       return (i, beta)
     if (i == states.size - 1) {
@@ -84,7 +83,9 @@ class Algorithm(val initialState : InternalState, val depth : Int) {
       else
         return (maxIndex, alpha)
     }
-    return rootIteration(maxIndex, if (newAlpha > alpha) newAlpha else alpha, beta, height, i + 1, states)
+    if (newAlpha > alpha)
+      return rootIteration(i, newAlpha, beta, height, i + 1, states)
+    return rootIteration(maxIndex, alpha, beta, height, i + 1, states)
   }
 
   def run() : (Figure, (Int, Int)) = {
